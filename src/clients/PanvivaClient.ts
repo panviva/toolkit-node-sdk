@@ -1,8 +1,6 @@
 import Authentication from '../interfaces/Authentication';
 import { ResourceApiKeys } from '../enums/ResourceApiKeys';
 import localVarRequest from 'request';
-import http from 'http';
-import { Promise } from 'bluebird';
 import GetDocumentContainersResponse from '../models/GetDocumentContainersResponse';
 import GetDocumentContainerRelationshipsResponse from '../models/GetDocumentContainerRelationshipsResponse';
 import GetContainerResponse from '../models/GetContainerResponse';
@@ -79,7 +77,7 @@ export default class PanvivaClient {
     public getArtefactById(
       id: string,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetResponseResponse }> {
+    ): Promise<{ body: GetResponseResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/artefact/{id}'
@@ -123,15 +121,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetResponseResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetResponseResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -144,7 +142,7 @@ export default class PanvivaClient {
      */
     public getArtefactCategories(
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetArtefactCategoriesResponse }> {
+    ): Promise<{ body: GetArtefactCategoriesResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/artefactcategory'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -181,15 +179,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetArtefactCategoriesResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetArtefactCategoriesResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -204,7 +202,7 @@ export default class PanvivaClient {
     public getArtefactCategoryPost(
       postArtefactCategoryRequest?: PostArtefactCategoryRequest,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: PostArtefactCategoryResponse }> {
+    ): Promise<{ body: PostArtefactCategoryResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/artefactcategory'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -242,15 +240,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: PostArtefactCategoryResponse }>((resolve, reject) => {
+      return new Promise<{ body: PostArtefactCategoryResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -265,7 +263,7 @@ export default class PanvivaClient {
     public getContainerById(
       id: string,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetContainerResponse }> {
+    ): Promise<{ body: GetContainerResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/container/{id}'
@@ -309,15 +307,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetContainerResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetContainerResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -334,7 +332,7 @@ export default class PanvivaClient {
       id: string,
       version?: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetDocumentResponse }> {
+    ): Promise<{ body: GetDocumentResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/document/{id}'
@@ -382,15 +380,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetDocumentResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetDocumentResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -405,7 +403,7 @@ export default class PanvivaClient {
     public getDocumentByIdContainers(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetDocumentContainersResponse }> {
+    ): Promise<{ body: GetDocumentContainersResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/document/{id}/containers'
@@ -451,15 +449,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetDocumentContainersResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetDocumentContainersResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -474,7 +472,7 @@ export default class PanvivaClient {
     public getDocumentByIdContainersRelationships(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetDocumentContainerRelationshipsResponse }> {
+    ): Promise<{ body: GetDocumentContainerRelationshipsResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/document/{id}/containers/relationships'
@@ -522,16 +520,16 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetDocumentContainerRelationshipsResponse }>(
+      return new Promise<{ body: GetDocumentContainerRelationshipsResponse }>(
         (resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error, response, body) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });
@@ -547,7 +545,7 @@ export default class PanvivaClient {
     public getDocumentByIdTranslations(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetDocumentTranslationsResponse }> {
+    ): Promise<{ body: GetDocumentTranslationsResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/document/{id}/translations'
@@ -593,15 +591,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetDocumentTranslationsResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetDocumentTranslationsResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -616,7 +614,7 @@ export default class PanvivaClient {
     public getFileById(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetFileResponse }> {
+    ): Promise<{ body: GetFileResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/file/{id}'
@@ -660,15 +658,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetFileResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetFileResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -683,7 +681,7 @@ export default class PanvivaClient {
     public getFolderById(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetFolderResponse }> {
+    ): Promise<{ body: GetFolderResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/folder/{id}'
@@ -727,15 +725,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetFolderResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetFolderResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -750,7 +748,7 @@ export default class PanvivaClient {
     public getFolderByIdChildren(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetFolderChildrenResponse }> {
+    ): Promise<{ body: GetFolderChildrenResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/folder/{id}/children'
@@ -794,15 +792,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetFolderChildrenResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetFolderChildrenResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -817,7 +815,7 @@ export default class PanvivaClient {
     public getFolderByIdTranslations(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetFolderTranslationsResponse }> {
+    ): Promise<{ body: GetFolderTranslationsResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/folder/{id}/translations'
@@ -863,15 +861,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetFolderTranslationsResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetFolderTranslationsResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -884,7 +882,7 @@ export default class PanvivaClient {
      */
     public getFolderRoot(
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetFolderRootResponse }> {
+    ): Promise<{ body: GetFolderRootResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/folder/root'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -921,15 +919,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetFolderRootResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetFolderRootResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -944,7 +942,7 @@ export default class PanvivaClient {
     public getImageById(
       id: number,
       options: any = {},
-    ): Promise<{ response: http.IncomingMessage; body: GetImageResponse }> {
+    ): Promise<{ body: GetImageResponse }> {
       const localVarPath =
         this.basePath +
         '/{instance}/resources/image/{id}'
@@ -988,15 +986,15 @@ export default class PanvivaClient {
           localVarRequestOptions.form = localVarFormParams;
         }
       }
-      return new Promise<{ response: http.IncomingMessage; body: GetImageResponse }>((resolve, reject) => {
+      return new Promise<{ body: GetImageResponse }>((resolve, reject) => {
         localVarRequest(localVarRequestOptions, (error, response, body) => {
           if (error) {
             reject(error);
           } else {
             if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-              resolve({ response, body });
+              resolve({ body });
             } else {
-              reject({ response, body });
+              reject({ body });
             }
           }
         });
@@ -1006,13 +1004,13 @@ export default class PanvivaClient {
     /**
      * Return search results for a given query
      * @summary Search Artefacts
-     * @param simplequery Natural language query string. For example: &#x60;&#x60;&#x60;Action Movies&#x60;&#x60;&#x60;. (Note: Use simplequery OR advancedquery, not both.)
-     * @param advancedquery Query string written in Lucene query syntax. For example: &#x60;&#x60;&#x60;films AND \&quot;a story\&quot;&#x60;&#x60;&#x60;. (Note: Use simplequery OR advancedquery, not both.)
-     * @param filter Accepts a Lucene-formatted filter string. Examples: &#x60;&#x60;&#x60;category eq &#39;Mortgages&#39;&#x60;&#x60;&#x60;, &#x60;&#x60;&#x60;panvivaDocumentVersion gt &#39;8&#39;&#x60;&#x60;&#x60;. (Filterable fields include dateCreated, dateModified, dateDeconsted, categoryJson, queryVariationsJson, title, category, primaryQuery, isDeconsted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)
+     * @param simplequery Natural language query string. For example: Action Movies. (Note: Use simplequery OR advancedquery, not both.)
+     * @param advancedquery Query string written in Lucene query syntax. For example: films AND "a story". (Note: Use simplequery OR advancedquery, not both.)
+     * @param filter Accepts a Lucene-formatted filter string. Examples: category/name eq 'Mortgages', panvivaDocumentVersion gt '8'. (Filterable fields include dateCreated, dateModified, dateDeleted, category/name, category/dateCreated, category/dateModified, metaData/keyword/values, metaData/keyword/dataType, title, primaryQuery, isDeleted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)
      * @param channel Return response for a specific channel, instead of the default
      * @param pageOffset The pagination offset to denote the number of initial search results to skip. For example, pageOffset of 100 and pageLimit of 10 would return records 101-110.
      * @param pageLimit The number of records to return. Must be an integer between 0 and 1000.
-     * @param facet Accepts a Lucene-formatted facet string. Examples: &#x60;&#x60;&#x60;facet&#x3D;Category,count:10&amp;amp;facet&#x3D;Rating&#x60;&#x60;&#x60;. (Facetable fields include metaData/values)
+     * @param facet Accepts a string denoting the field to facet by. Examples: facet=metaData/keyword/values. (Facetable fields include metaData/keyword/values)
      * @param {*} [options] Override http request options.
      */
     public searchArtefacts(
@@ -1024,7 +1022,7 @@ export default class PanvivaClient {
         pageLimit?: number,
         facet?: string,
         options: any = {},
-      ): Promise<{ response: http.IncomingMessage; body: GetSearchArtefactResponse }> {
+      ): Promise<{ body: GetSearchArtefactResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/artefact/nls'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1089,15 +1087,15 @@ export default class PanvivaClient {
             localVarRequestOptions.form = localVarFormParams;
           }
         }
-        return new Promise<{ response: http.IncomingMessage; body: GetSearchArtefactResponse }>((resolve, reject) => {
+        return new Promise<{ body: GetSearchArtefactResponse }>((resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error: any, response: { statusCode: number }, body: any) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response: response as http.IncomingMessage, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });
@@ -1112,7 +1110,7 @@ export default class PanvivaClient {
       public postLiveCsh(
         postLiveCshRequest?: PostLiveCshRequest,
         options: any = {},
-      ): Promise<{ response: http.IncomingMessage; body: PostLiveCshResponse }> {
+      ): Promise<{ body: PostLiveCshResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/live/csh'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1150,15 +1148,15 @@ export default class PanvivaClient {
             localVarRequestOptions.form = localVarFormParams;
           }
         }
-        return new Promise<{ response: http.IncomingMessage; body: PostLiveCshResponse }>((resolve, reject) => {
+        return new Promise<{ body: PostLiveCshResponse }>((resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error, response, body) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });
@@ -1173,7 +1171,7 @@ export default class PanvivaClient {
       public postliveDocument(
         postLiveDocumentRequest?: PostLiveDocumentRequest,
         options: any = {},
-      ): Promise<{ response: http.IncomingMessage; body: PostLiveDocumentResponse }> {
+      ): Promise<{ body: PostLiveDocumentResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/live/document'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1211,15 +1209,15 @@ export default class PanvivaClient {
             localVarRequestOptions.form = localVarFormParams;
           }
         }
-        return new Promise<{ response: http.IncomingMessage; body: PostLiveDocumentResponse }>((resolve, reject) => {
+        return new Promise<{ body: PostLiveDocumentResponse }>((resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error, response, body) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });
@@ -1234,7 +1232,7 @@ export default class PanvivaClient {
       public postLiveSearch(
         postLiveSearchRequest?: PostLiveSearchRequest,
         options: any = {},
-      ): Promise<{ response: http.IncomingMessage; body: PostLiveSearchResponse }> {
+      ): Promise<{ body: PostLiveSearchResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/live/search'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1272,15 +1270,15 @@ export default class PanvivaClient {
             localVarRequestOptions.form = localVarFormParams;
           }
         }
-        return new Promise<{ response: http.IncomingMessage; body: PostLiveSearchResponse }>((resolve, reject) => {
+        return new Promise<{ body: PostLiveSearchResponse }>((resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error, response, body) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });
@@ -1299,7 +1297,7 @@ export default class PanvivaClient {
         pageOffset?: number,
         pageLimit?: number,
         options: any = {},
-      ): Promise<{ response: http.IncomingMessage; body: GetSearchResponse }> {
+      ): Promise<{ body: GetSearchResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/search'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1353,15 +1351,15 @@ export default class PanvivaClient {
             localVarRequestOptions.form = localVarFormParams;
           }
         }
-        return new Promise<{ response: http.IncomingMessage; body: GetSearchResponse }>((resolve, reject) => {
+        return new Promise<{ body: GetSearchResponse }>((resolve, reject) => {
           localVarRequest(localVarRequestOptions, (error, response, body) => {
             if (error) {
               reject(error);
             } else {
               if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                resolve({ response, body });
+                resolve({ body });
               } else {
-                reject({ response, body });
+                reject({ body });
               }
             }
           });

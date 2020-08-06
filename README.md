@@ -249,7 +249,7 @@ To get your API instance you must:
         <tr>
             <td>filter (optional)</td>
             <td>string</td>
-            <td> Accepts a Lucene-formatted filter string. Examples: category/name eq 'Mortgages', panvivaDocumentVersion gt '8' (Filterable fields include dateCreated, dateModified, dateDeconsted, categoryJson, queryVariationsJson, title, category, primaryQuery, isDeconsted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)</td>
+            <td> Accepts a Lucene-formatted filter string. Examples: category/name eq 'Mortgages', panvivaDocumentVersion gt '8' (Filterable fields include dateCreated, dateModified, dateDeleted, category/name, category/dateCreated, category/dateModified, metaData/keyword/values, metaData/keyword/dataType, title, primaryQuery, isDeleted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)</td>
         </tr>
          <tr>
             <td>channel (optional)</td>
