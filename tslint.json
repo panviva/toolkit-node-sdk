@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "no-string-literal": false
+    },
+    "extends": ["tslint:recommended", "tslint-config-prettier"]
+ }
