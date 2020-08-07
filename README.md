@@ -60,11 +60,9 @@ Example request:
 
 ```js
 panvivaClient
-  .searchArtefacts('*')
-  .then((response) => {
+  .searchArtefacts('*').then((response) => {
     console.log(response);
   })
-  .error((error) => console.error(error))
   .catch((ex) => console.error(ex));
 ```
 
