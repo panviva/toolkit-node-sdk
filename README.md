@@ -1,5 +1,7 @@
 # Panviva SDK
 
+![npm](https://img.shields.io/npm/dm/@panviva/toolkit-node-sdk) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@panviva/toolkit-node-sdk) ![npm (scoped)](https://img.shields.io/npm/v/@panviva/toolkit-node-sdk)
+
 ## **Introduction**
 
 Wouldn't it be great if you could share information seamlessly? This JavaScript SDK allows you to push your knowledge further and consume a complete list of Panviva's API offerings within your application. This is a simple NPM package provided by [Panviva](https://www.panviva.com) to help streamline integration with Panviva APIs within JavaScript environments.
