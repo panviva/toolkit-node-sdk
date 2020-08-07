@@ -1,8 +1,8 @@
-# Panviva.Sdk
+# Panviva SDK
 
 ## **Introduction**
 
-Wouldn't it be great if you could share information seamlessly? This JavaScript SDK allows you to push your knowledge further and consume a complete list of Panviva's API offerings within your application. This is a simple NPM package provided by [Panviva Pty. Ltd.](https://www.panviva.com) to help streamline integration with Panviva APIs within JavaScript environments.
+Wouldn't it be great if you could share information seamlessly? This JavaScript SDK allows you to push your knowledge further and consume a complete list of Panviva's API offerings within your application. This is a simple NPM package provided by [Panviva](https://www.panviva.com) to help streamline integration with Panviva APIs within JavaScript environments.
 
 ## **Prerequisites**
 
@@ -16,9 +16,7 @@ If you are not a customer or need help visit [www.panviva.com/support](https://w
 
 ### How to get credentials
 
-Follow the steps below to get your API key & API instance.
-
-If you see an error while using the connector you may look up the error code for more information. Note: the HTTP status code in the documentation may be slightly different than what you see in Power Automate or Power Apps, please use the Error Code field for lookup purposes.
+Follow the steps below to get your API key & instance name.
 
 To get your API key you must:
 
@@ -26,59 +24,49 @@ To get your API key you must:
 2. Navigate to your profile (click your name then click "Profile" from the top navigation bar)
 3. Your should now see your API key under "Your Subscriptions" section of your profile.
 
-To get your API instance you must:
+To get your instance name you must:
 
 1. Sign into the Panviva developer portal at [dev.panviva.com](https://dev.panviva.com)
 2. Navigate to your API (click "APIs" from the top navigation bar)
 3. You should now see your API instance under your API suite (look for "_The instance name for the API Suite is_")
 
-## **Setup For PanvivaClient in a NodeJS environment**
+## Installation
 
-### Setting up .Net Core project
+To install [@panviva/toolkit-node-sdk](https://www.npmjs.com/package/@panviva/toolkit-node-sdk):
 
-1. Install the panviva.SDK package into node_modules and save it as a dependency in the package.json.
+```sh
+# Run this command in your project root
+# with npm
+npm install --save @panviva/toolkit-node-sdk
 
-   - Run this command from the command-line in the same folder as your package.json:
+# with yarn
+yarn add @panviva/toolkit-node-sdk
+```
 
-   ```console
-       npm install --save panviva.sdk
-   ```
+Set up:
 
-1. Import the Panviva client and the ResourceApiKeys enum from panviva.sdk into the file you wish to use it in.
+```js
+const { PanvivaClient, ResourceApiKeys } = require('@panviva/toolkit-node-sdk');
 
-   - Example:
+const panvivaClient = new PanvivaClient('_Your instance name here_');
+// You can provide a base URL as the second argument, it defaults to `https://api.panviva.com`
 
-   ```js
-   const { PanvivaClient, ResourceApiKeys } = require('testpanviva');
-   ```
+panvivaClient.setApiKey(ResourceApiKeys.apiKeyHeader, '_Your API key_');
+```
 
-1. Instantiate new PanvivaClient
+Example request:
 
-   - To create a new client:
+```js
+panvivaClient
+  .searchArtefacts('*')
+  .then((response) => {
+    console.log(response);
+  })
+  .error((error) => console.error(error))
+  .catch((ex) => console.error(ex));
+```
 
-   ```js
-   var panvivaClient = new PanvivaClient('_Your instance name here_', 'https://api.panviva.com');
-   ```
-
-   > Note : Base URL is optional by default it will be `https://api.panviva.com`. You can provide a value to override the default.
-
-1. Set the subscription key
-
-   - panvivaClient.setApiKey(ResourceApiKeys.apiKeyHeader, "**replace with subscription key**");
-
-1. Now you can make a request to the Panviva APIs if you have entered everything above correctly
-   - An example of searching artefacts is:
-     ```js
-     panvivaClient
-       .searchArtefacts('_your instance name here_', '_your query_')
-       .then((response) => {
-         console.log(response.body);
-       })
-       .error((error) => console.log(error))
-       .catch((ex) => console.log(ex));
-     ```
-
-## **Available PanvivaClient methods**
+## **Available client methods**
 
 <br>
 
