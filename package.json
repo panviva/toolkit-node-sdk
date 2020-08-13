@@ -1,5 +1,5 @@
 {
-  "name": "@panviva/toolkit-node-sdk",
+  "name": "@panviva/node-sdk",
   "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
