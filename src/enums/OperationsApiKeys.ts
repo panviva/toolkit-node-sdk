@@ -1,3 +1,3 @@
 export enum OperationsApiKeys {
-    apiKeyHeader,
-  }
+  apiKeyHeader,
+}

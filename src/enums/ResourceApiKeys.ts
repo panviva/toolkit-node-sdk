@@ -1,3 +1,3 @@
 export enum ResourceApiKeys {
-    apiKeyHeader,
-  }
+  apiKeyHeader,
+}

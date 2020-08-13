@@ -2,7 +2,7 @@
  * Panviva API Suite v3
  */
 export { default as PanvivaClient } from './clients/PanvivaClient';
-export { ResourceApiKeys }  from './enums/ResourceApiKeys';
+export { ResourceApiKeys } from './enums/ResourceApiKeys';
 export { default as GetDocumentContainersResponse } from './models/GetDocumentContainersResponse';
 export { default as GetDocumentContainerRelationshipsResponse } from './models/GetDocumentContainerRelationshipsResponse';
 export { default as GetContainerResponse } from './models/GetContainerResponse';
