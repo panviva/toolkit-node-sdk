@@ -1,6 +1,6 @@
 # Panviva SDK
 
-![npm](https://img.shields.io/npm/dm/@panviva/toolkit-node-sdk) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@panviva/toolkit-node-sdk) ![npm (scoped)](https://img.shields.io/npm/v/@panviva/toolkit-node-sdk)
+![npm](https://img.shields.io/npm/dm/@panviva/node-sdk) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@panviva/node-sdk) ![npm (scoped)](https://img.shields.io/npm/v/@panviva/node-sdk)
 
 ## **Introduction**
 
@@ -34,21 +34,21 @@ To get your instance name you must:
 
 ## Installation
 
-To install [@panviva/toolkit-node-sdk](https://www.npmjs.com/package/@panviva/toolkit-node-sdk):
+To install [@panviva/node-sdk](https://www.npmjs.com/package/@panviva/node-sdk):
 
 ```sh
 # Run this command in your project root
 # with npm
-npm install --save @panviva/toolkit-node-sdk
+npm install --save @panviva/node-sdk
 
 # with yarn
-yarn add @panviva/toolkit-node-sdk
+yarn add @panviva/node-sdk
 ```
 
 Set up:
 
 ```js
-const { PanvivaClient, ResourceApiKeys } = require('@panviva/toolkit-node-sdk');
+const { PanvivaClient, ResourceApiKeys } = require('@panviva/node-sdk');
 
 const panvivaClient = new PanvivaClient('_Your instance name here_');
 // You can provide a base URL as the second argument, it defaults to `https://api.panviva.com`
@@ -60,7 +60,8 @@ Example request:
 
 ```js
 panvivaClient
-  .searchArtefacts('*').then((response) => {
+  .searchArtefacts({ simplequery: '*' })
+  .then((response) => {
     console.log(response);
   })
   .catch((ex) => console.error(ex));
