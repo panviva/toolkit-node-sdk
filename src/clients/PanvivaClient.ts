@@ -1004,16 +1004,16 @@ export default class PanvivaClient {
     /**
      * Return search results for a given query
      * @summary Search Artefacts
-     * @param simplequery Natural language query string. For example: Action Movies. (Note: Use simplequery OR advancedquery, not both.)
-     * @param advancedquery Query string written in Lucene query syntax. For example: films AND "a story". (Note: Use simplequery OR advancedquery, not both.)
-     * @param filter Accepts a Lucene-formatted filter string. Examples: category/name eq 'Mortgages', panvivaDocumentVersion gt '8'. (Filterable fields include dateCreated, dateModified, dateDeleted, category/name, category/dateCreated, category/dateModified, metaData/keyword/values, metaData/keyword/dataType, title, primaryQuery, isDeleted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)
-     * @param channel Return response for a specific channel, instead of the default
-     * @param pageOffset The pagination offset to denote the number of initial search results to skip. For example, pageOffset of 100 and pageLimit of 10 would return records 101-110.
-     * @param pageLimit The number of records to return. Must be an integer between 0 and 1000.
-     * @param facet Accepts a string denoting the field to facet by. Examples: facet=metaData/keyword/values. (Facetable fields include metaData/keyword/values)
-     * @param {*} [options] Override http request options.
+     * @param {string} params.simplequery Natural language query string. For example: Action Movies. (Note: Use simplequery OR advancedquery, not both.)
+     * @param {string} params.advancedquery Query string written in Lucene query syntax. For example: films AND "a story". (Note: Use simplequery OR advancedquery, not both.)
+     * @param {string} params.filter Accepts a Lucene-formatted filter string. Examples: category/name eq 'Mortgages', panvivaDocumentVersion gt '8'. (Filterable fields include dateCreated, dateModified, dateDeleted, category/name, category/dateCreated, category/dateModified, metaData/keyword/values, metaData/keyword/dataType, title, primaryQuery, isDeleted, timestamp, panvivaDocumentId, panvivaDocumentVersion, id)
+     * @param {string} params.channel Return response for a specific channel, instead of the default
+     * @param {number} params.pageOffset The pagination offset to denote the number of initial search results to skip. For example, pageOffset of 100 and pageLimit of 10 would return records 101-110.
+     * @param {number} params.pageLimit The number of records to return. Must be an integer between 0 and 1000.
+     * @param {string} params.facet Accepts a string denoting the field to facet by. Examples: facet=metaData/keyword/values. (Facetable fields include metaData/keyword/values)
+     * @param {Object} [options] Override http request options.
      */
-    public searchArtefacts(
+    public searchArtefacts({
         simplequery?: string,
         advancedquery?: string,
         filter?: string,
@@ -1022,7 +1022,7 @@ export default class PanvivaClient {
         pageLimit?: number,
         facet?: string,
         options: any = {},
-      ): Promise<{ body: GetSearchArtefactResponse }> {
+    }): Promise<{ body: GetSearchArtefactResponse }> {
         const localVarPath =
           this.basePath +
           '/{instance}/operations/artefact/nls'.replace('{instance}', encodeURIComponent(String(this._instance)));
@@ -1366,4 +1366,3 @@ export default class PanvivaClient {
         });
       }
   }
-  

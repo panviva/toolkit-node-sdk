@@ -60,7 +60,7 @@ Example request:
 
 ```js
 panvivaClient
-  .searchArtefacts('*')
+  .searchArtefacts({ simplequery: '*' })
   .then((response) => {
     console.log(response);
   })
