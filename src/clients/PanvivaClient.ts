@@ -247,7 +247,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getContainerById(id: string, options: any = {}): Promise<{ body: GetContainerResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/container/${encodeURIComponent(id)}`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/container/${encodeURIComponent(id)}`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -308,7 +308,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getDocumentById(id: string, version?: number, options: any = {}): Promise<{ body: GetDocumentResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -372,7 +372,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getDocumentByIdContainers(id: number, options: any = {}): Promise<{ body: GetDocumentContainersResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/containers`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/containers`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -437,7 +437,7 @@ export default class PanvivaClient {
     id: number,
     options: any = {},
   ): Promise<{ body: GetDocumentContainerRelationshipsResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/containers/relationships`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/containers/relationships`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -504,7 +504,7 @@ export default class PanvivaClient {
     id: number,
     options: any = {},
   ): Promise<{ body: GetDocumentTranslationsResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/translations`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/document/${encodeURIComponent(id)}/translations`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -566,7 +566,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getFileById(id: number, options: any = {}): Promise<{ body: GetFileResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/file/${encodeURIComponent(id)}`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/file/${encodeURIComponent(id)}`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -626,7 +626,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getFolderById(id: number, options: any = {}): Promise<{ body: GetFolderResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -686,7 +686,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getFolderByIdChildren(id: number, options: any = {}): Promise<{ body: GetFolderChildrenResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}/children`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}/children`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -746,7 +746,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getFolderByIdTranslations(id: number, options: any = {}): Promise<{ body: GetFolderTranslationsResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}/translations`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/${encodeURIComponent(id)}/translations`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -807,7 +807,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getFolderRoot(options: any = {}): Promise<{ body: GetFolderRootResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/root`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/folder/root`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -862,11 +862,7 @@ export default class PanvivaClient {
    * @param {*} [options] Override http request options.
    */
   public getImageById(id: number, options: any = {}): Promise<{ body: GetImageResponse }> {
-    const localVarPath =
-      this.basePath +
-      '/{instance}/resources/image/{id}'
-        .replace('{instance}', encodeURIComponent(String(this._instance)))
-        .replace('{' + id + '}', encodeURIComponent(String(id)));
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/resources/image/${encodeURIComponent(id)}`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -951,7 +947,7 @@ export default class PanvivaClient {
     facet?: string;
     options: any;
   }): Promise<{ body: GetSearchArtefactResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/operations/artefact/nls`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/operations/artefact/nls`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -1037,7 +1033,7 @@ export default class PanvivaClient {
     postLiveCshRequest?: PostLiveCshRequest,
     options: any = {},
   ): Promise<{ body: PostLiveCshResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/csh`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/csh`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -1096,7 +1092,7 @@ export default class PanvivaClient {
     postLiveDocumentRequest?: PostLiveDocumentRequest,
     options: any = {},
   ): Promise<{ body: PostLiveDocumentResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/document`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/document`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -1155,7 +1151,7 @@ export default class PanvivaClient {
     postLiveSearchRequest?: PostLiveSearchRequest,
     options: any = {},
   ): Promise<{ body: PostLiveSearchResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/search`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/operations/live/search`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
@@ -1218,7 +1214,7 @@ export default class PanvivaClient {
     pageLimit?: number,
     options: any = {},
   ): Promise<{ body: GetSearchResponse }> {
-    const localVarPath = `${encodeURIComponent(this.basePath)}/${encodeURIComponent(this._instance)}/operations/search`;
+    const localVarPath = `${encodeURI(this.basePath)}/${encodeURIComponent(this._instance)}/operations/search`;
     const localVarQueryParameters: any = {};
     const localVarHeaderParams: any = Object.assign({}, this.defaultHeaders);
     const localVarFormParams: any = {};
